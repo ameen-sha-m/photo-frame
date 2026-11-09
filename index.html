@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Create your campaign poster by uploading your photo.">
+    <title>Campaign Poster Generator</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header-content">
+            <h1>Campaign Poster Generator</h1>
+            <p>Upload your photo and create your campaign poster.</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="controls">
+            <h2>Create Your Poster</h2>
+            <p class="section-description">
+                Upload your picture and adjust it to fit the poster.
+            </p>
+
+            <div class="control-group">
+                <label for="photoInput">Upload Your Photo</label>
+                <input
+                    type="file"
+                    id="photoInput"
+                    accept="image/png,image/jpeg,image/webp"
+                >
+                <small>JPG, PNG or WebP. Maximum file size: 10 MB.</small>
+            </div>
+
+            <div class="control-group">
+                <label for="zoom">Photo Zoom</label>
+                <input
+                    type="range"
+                    id="zoom"
+                    min="1"
+                    max="3"
+                    step="0.01"
+                    value="1"
+                >
+            </div>
+
+            <div class="control-group">
+                <label for="horizontal">Horizontal Position</label>
+                <input
+                    type="range"
+                    id="horizontal"
+                    min="-100"
+                    max="100"
+                    value="0"
+                >
+            </div>
+
+            <div class="control-group">
+                <label for="vertical">Vertical Position</label>
+                <input
+                    type="range"
+                    id="vertical"
+                    min="-100"
+                    max="100"
+                    value="0"
+                >
+            </div>
+
+            <div class="button-group">
+                <button type="button" id="resetBtn" class="reset-button">
+                    Reset Adjustments
+                </button>
+
+                <button type="button" id="downloadBtn" class="download-button">
+                    Download Poster
+                </button>
+            </div>
+
+            <p id="statusMessage" class="status-message" role="status">
+                Loading poster template...
+            </p>
+        </section>
+
+        <section class="preview">
+            <h2>Poster Preview</h2>
+
+            <div class="canvas-container">
+                <canvas id="posterCanvas">
+                    Your browser does not support canvas.
+                </canvas>
+            </div>
+
+            <p class="preview-info">
+                Your photo will appear behind the poster's foreground design.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Campaign Poster Generator</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
